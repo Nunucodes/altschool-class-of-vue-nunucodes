@@ -41,26 +41,20 @@ export default {
       // loop through the colors
       // get color
       // do check to confirm if searchvalue is in the currentColor
-
       const newArray = [];
-
       if (this.searchValue.length === 0) {
         return this.colors;
       }
-
       for (let index = 0; index < this.colors.length; index++) {
         const color = this.colors[index];
-
         // check if the color is included in the searchValue
         let condition = color
           .toLowerCase()
           .includes(this.searchValue.toLowerCase());
-
         if (condition) {
           newArray.push(color);
         }
       }
-
       return newArray;
     },
   },
