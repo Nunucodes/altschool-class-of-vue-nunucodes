@@ -26,7 +26,6 @@
 <script>
 import { ref, reactive } from "@vue/reactivity";
 import bookManager from "../composables/book-manager";
-
 export default {
   name: "AboutComposition",
   data() {
@@ -47,18 +46,14 @@ export default {
   setup() {
     const messageRef = ref(null);
     const { books, book, addBook } = bookManager();
-
     const roleManager = () => {};
-
     const firstName = ref("Adebayo");
     const lastName = ref("Pokanu");
-
     const updateMessage = () => {
       console.log("messageRef", messageRef.value.textContent);
       messageRef.value.classList.add("text-red");
       messageRef.value.textContent = "Thank you Adebayo!";
     };
-
     return { books, book, addBook, messageRef, updateMessage };
   },
 };
